@@ -1,20 +1,27 @@
 .App {
   text-align: center;
 }
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .App-container {
   display: flex;
-  width: 25vw;
+  width: 35vw;
   flex-direction:column;
   justify-content: center;
-  
+  margin-top: 10px;
+  margin-left: 30px;
   
 }
 
 .App-container img{
-  width: 100%; 
+  width: 30vw;
+  height: 50vh;
   border: 2px solid black;
-
+  
 }
 
 .button{

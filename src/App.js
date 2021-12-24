@@ -5,7 +5,7 @@ import React, { Component } from 'react'
 export class App extends Component {
  
   inputRef=React.createRef();
-state={yes:0, no:0, value:0}
+state={yes:0, no:0, value:0, message:''}
 
 yes=() =>{
   this.setState({yes:this.state.yes+1});
@@ -14,6 +14,15 @@ yes=() =>{
 no=() =>{
   this.setState({no:this.state.no+1});
 }
+start=() =>{
+  this.setState({
+    no:0,
+    yes:0,
+    value:0,
+  });
+}
+
+
 
 getImageUrl = (index) => {
   return `https://picsum.photos/500/500?random=${index}`;
@@ -29,7 +38,7 @@ getImageUrl = (index) => {
 
       return (
           <div className="App-container">
-      
+            <h3> Tell us your opinion about each picture below</h3>
         <img  src={this.getImageUrl(Date.now())} alt="random"/>
         <div >
         Enter how many pictures you like to see:
@@ -52,9 +61,13 @@ getImageUrl = (index) => {
     )
     }
     else{
+      
       return (
-
-        <div> Game Over</div>
+        
+        <div>
+        <h2> Game Over</h2>
+        <button className="button" onClick={this.start}>Start Over </button>
+        </div>
       )
     }
   }
